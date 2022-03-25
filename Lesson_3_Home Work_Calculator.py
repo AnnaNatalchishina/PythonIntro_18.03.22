@@ -32,6 +32,9 @@ try:
 except ValueError:
     print("Это не число!")
 
+except ZeroDivisionError:
+    print("На 0 делить нельзя!")
+
 
 
 
