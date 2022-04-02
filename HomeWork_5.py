@@ -10,3 +10,4 @@ for symb_1 in my_string:
 
 
 
+
