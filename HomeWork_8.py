@@ -6,38 +6,38 @@
 # Задание сделать с использованием enumerate или range.
 #
 
-# my_list = ["qwerty", 'tr6', '7p', "54"]
-# new_list = []
-# for index, symbol in enumerate(my_list):
-#     if index % 2 == 0:
-#         new_list.append(symbol)
-#     else:
-#         new_list.append(symbol[::-1])
-# print(new_list)
+my_list = ["qwerty", 'tr6', '7p', "54"]
+new_list = []
+for index, value in enumerate(my_list):
+    if index % 2 == 0:
+        new_list.append(value)
+    else:
+        new_list.append(value[::-1])
+print(new_list)
 
 
 
 # 2. Дан список строк my_list. Создать новый список в который поместить
 # элементы из my_list у которых первый символ - буква "a".
 #
-# my_list = ["qwertya", 'atr6', '7pa', "a54"]
-# new_list = []
-# for symbol in my_list:
-#     if symbol[0] == "a":
-#         new_list.append(symbol)
-# print(new_list)
+my_list = ["qwertya", 'atr6', '7pa', "a54"]
+new_list = []
+for value in my_list:
+    if value[0] == "a":
+        new_list.append(value)
+print(new_list)
 
 
 
 # 3. Дан список строк my_list. Создать новый список в который поместить
 # элементы из my_list в которых есть символ - буква "a" на любом месте.
 #
-# my_list = ["qwertya", 'atr6', '7pa', "a54"]
-# new_list = []
-# for symbol in my_list:
-#     if 'a' in symbol:
-#         new_list.append(symbol)
-# print(new_list)
+my_list = ["qwertya", 'atr6', '7pa', "a54"]
+new_list = []
+for value in my_list:
+    if 'a' in value:
+        new_list.append(value)
+print(new_list)
 
 
 
@@ -48,37 +48,42 @@
 # в) Посчитать среднее количество лет всех людей из начального списка.
 #
 
-# persons = [{"name": "John", "age": 15},
-#            {"name": "Alice", "age": 6},
-#            {"name": "Jack", "age": 45}]
-# list_result_a = []
-# min_age = []
-# for symbol in persons:
-#     min_age.append(symbol["age"])
-#
-# for symbol in persons:
-#     if symbol["age"] == min(min_age):
-#         list_result_a.append(symbol["name"])
-#
-# print(list_result_a)
+persons = [{"name": "John", "age": 15},
+           {"name": "Alice", "age": 6},
+           {"name": "Jack", "age": 45}]
+# a)
+list_result_a = []
+min_age = []
+for dic in persons:
+    min_age.append(dic["age"])
 
-# list_result_b = []
-# max_name = []
-# for symbol in persons:
-#     max_name.append(len(symbol["name"]))
-#
-# for symbol in persons:
-#     if len(symbol["name"]) == max(max_name):
-#         list_result_b.append(symbol["name"])
-#
-# print(list_result_b)
+for dic in persons:
+    if dic["age"] == min(min_age):
+        list_result_a.append(dic["name"])
 
-# ages = []
-# for person in persons:
-#     ages.append(person["age"])
-# average_age = sum(ages) / len(ages)
-#
-# print(average_age)
+print(list_result_a)
+
+# б)
+
+list_result_b = []
+max_name = []
+for dic in persons:
+    max_name.append(len(dic["name"]))
+
+for dic in persons:
+    if len(dic["name"]) == max(max_name):
+        list_result_b.append(dic["name"])
+
+print(list_result_b)
+
+# в)
+
+ages = []
+for person in persons:
+    ages.append(person["age"])
+average_age = sum(ages) / len(ages)
+
+print(average_age)
 
 
 
@@ -97,42 +102,42 @@
 my_dict_1 = {"name": "John", "age": 15, 5: "2"}
 my_dict_2 = {"name": "Alice", "age": 6, "5": 2}
 
-# my_list = []
-# set_dict_1 = set(my_dict_1.keys())
-# set_dict_2 = set(my_dict_2.keys())
-# my_list = list(set_dict_1.intersection(set_dict_2))
-#
-# print(my_list)
+my_list = []
+set_dict_1 = set(my_dict_1.keys())
+set_dict_2 = set(my_dict_2.keys())
+my_list = list(set_dict_1.intersection(set_dict_2))
+
+print(my_list)
 
 # б)
-# my_list = []
-# set_dict_1 = set(my_dict_1.keys())
-# set_dict_2 = set(my_dict_2.keys())
-# my_list = list(set_dict_1.difference(set_dict_2))
-# print(my_list)
+my_list = []
+set_dict_1 = set(my_dict_1.keys())
+set_dict_2 = set(my_dict_2.keys())
+my_list = list(set_dict_1.difference(set_dict_2))
+print(my_list)
 
 # в)
-# new_dict = {}
-# set_dict_1 = set(my_dict_1.keys())
-# set_dict_2 = set(my_dict_2.keys())
-# set_difference = set_dict_1.difference(set_dict_2)
-#
-# for key in set_difference:
-#     new_dict[key] = my_dict_1[key]
-#
-# print(new_dict)
+new_dict = {}
+set_dict_1 = set(my_dict_1.keys())
+set_dict_2 = set(my_dict_2.keys())
+set_difference = set_dict_1.difference(set_dict_2)
+
+for key in set_difference:
+    new_dict[key] = my_dict_1[key]
+
+print(new_dict)
 
 # г)
-# new_dict = {}
-# set_dict_1 = set(my_dict_1.keys())
-# set_dict_2 = set(my_dict_2.keys())
-# list_union_key = list(set_dict_1.union(set_dict_2))
-# for key in list_union_key:
-#     if key in my_dict_1.keys() and key in my_dict_2.keys():
-#         new_dict[key] = [my_dict_1[key], my_dict_2[key]]
-#     elif key in my_dict_1.keys():
-#         new_dict[key] = my_dict_1[key]
-#     else:
-#         new_dict[key] = my_dict_2[key]
-#
-# print(new_dict)
+new_dict = {}
+set_dict_1 = set(my_dict_1.keys())
+set_dict_2 = set(my_dict_2.keys())
+list_union_key = list(set_dict_1.union(set_dict_2))
+for key in list_union_key:
+    if key in my_dict_1.keys() and key in my_dict_2.keys():
+        new_dict[key] = [my_dict_1[key], my_dict_2[key]]
+    elif key in my_dict_1.keys():
+        new_dict[key] = my_dict_1[key]
+    else:
+        new_dict[key] = my_dict_2[key]
+
+print(new_dict)
