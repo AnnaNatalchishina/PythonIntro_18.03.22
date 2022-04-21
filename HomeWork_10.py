@@ -66,4 +66,3 @@ def get_dates(filename):
 
 dates = get_dates(filename)
 print(dates)
-
