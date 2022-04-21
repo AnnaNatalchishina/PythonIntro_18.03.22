@@ -49,6 +49,25 @@ print(list_names)
 # Например [{"date": "1st January 1919", "date": "8th February 1828"},  ...]
 #
 
+# filename = "authors.txt"
+#
+#
+# def get_dates(filename):
+#     with open(filename, "r") as file_:
+#         data = file_.read()
+#     my_list = []
+#     for line in data.split("\n"):
+#         for value in line.split():
+#             if value.isdigit():
+#                 date = line[:line.find('-')]
+#                 my_list.append({'date': date})
+#     return my_list
+#
+#
+# dates = get_dates(filename)
+# print(dates)
+
+
 filename = "authors.txt"
 
 
@@ -57,10 +76,9 @@ def get_dates(filename):
         data = file_.read()
     my_list = []
     for line in data.split("\n"):
-        for value in line.split():
-            if value.isdigit():
-                date = line[:line.find('-')]
-                my_list.append({'date': date})
+        if " - " in line:
+            date = line[:line.find(' -')]
+            my_list.append({'date': date})
     return my_list
 
 
